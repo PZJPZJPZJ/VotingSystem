@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>投票详情</title>
+    <link rel="stylesheet" href="/lib/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <script src="/lib/js/jquery-3.5.1.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" th:href="@{/}">投票系统</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a class="navbar-brand" th:href="@{/visitor/index}">浏览</a></li>
+            <li><a class="navbar-brand" th:href="@{/user/list}">管理</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a th:href="@{/user/list}">登录</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="vote-box">
+    <form th:action="@{/visitor/detail}" method="post">
+        <table>
+            <tr class="vote-topic" th:each="topic: ${topics}">
+                <td>
+                    <h3 class="vote-title" th:text="${topic.title}"></h3>
+                    <h4 class="vote-time" th:text="${topic.time}"></h4>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr th:each="choice: ${choices}">
+                <td class="vote-item">
+                    <label class="vote-label" th:for="${choice.cid}">
+                        <input class="vote-input" type="radio" name="cid" th:id="${choice.cid}" th:value="${choice.cid}">
+                        <p class="vote-text" th:text="${choice.content}"></p>
+                        <div class="vote-img"><img class="vote-pic" th:src="${choice.picture}" th:style="${choice.picture==null} ? 'display:none' : ''"></div>
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <input class="btn btn-primary vote-submit" type="submit" value="提交投票">
+    </form>
+</div>
+</body>
+</html>

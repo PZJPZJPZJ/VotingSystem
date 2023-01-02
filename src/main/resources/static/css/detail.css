@@ -1,0 +1,48 @@
+body{
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.vote-img{
+    width: 100px;
+}
+.vote-pic{
+    width: 100%;
+    overflow: hidden;
+}
+.vote-box{
+    width: 80vw;
+    margin: 0 auto;
+}
+.vote-item{
+    padding: 10px;
+    width: 80vw;
+}
+.vote-input{
+    font-size: 50px;
+}
+.vote-label{
+    width: 80vw;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(300%);
+    overflow: hidden;
+    transition: 0.1s;
+}
+.vote-label:hover{
+    background-color: rgba(255,255,255,0.75);
+}
+.vote-text{
+    font-size: 30px;
+}
+.vote-time{
+    margin: 20px;
+}
+.vote-title{
+    margin: 20px;
+}
+.vote-submit{
+    width: 100px;
+    margin: 20px;
+}

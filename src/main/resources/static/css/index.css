@@ -1,0 +1,31 @@
+body{
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.topic-box{
+    width: 80vw;
+    margin: 0 auto;
+}
+.topic-line{
+    padding: 10px;
+    width: 80vw;
+}
+.topic-item{
+    width: 80vw;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(300%);
+    overflow: hidden;
+    transition: 0.1s;
+}
+.topic-item:hover{
+    background-color: rgba(255,255,255,0.75);
+}
+.topic-title{
+    font-size: 20px;
+}
+.topic-time{
+    font-size: 10px;
+}

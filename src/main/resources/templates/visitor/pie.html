@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票结果</title>
+    <link rel="stylesheet" href="/lib/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <script src="/lib/js/jquery-3.5.1.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/lib/js/echarts.min.js"></script>
+    <script src="/js/pie.js"></script>
+</head>
+<body>
+<nav class="navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" th:href="@{/}">投票系统</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a class="navbar-brand" th:href="@{/visitor/index}">浏览</a></li>
+            <li><a class="navbar-brand" th:href="@{/user/list}">管理</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a th:href="@{/user/list}">登录</a></li>
+        </ul>
+    </div>
+</nav>
+<div style="width: 80vw;margin: 0 auto;">
+    <table>
+        <tr th:each="topic: ${topics}">
+            <td style="font-size: 35px;">
+                <nobr>主题：</nobr>
+                <nobr th:text="${topic.title}"></nobr>
+            </td>
+        </tr>
+    </table>
+    <div class="pie-pic" id="main" style="width: 60vw; height: 60vw; margin: 0 auto" align="center"></div>
+</div>
+</body>
+</html>
